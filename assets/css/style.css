@@ -1,0 +1,8 @@
+body{
+    background-image: url("../images/page-background.jpg");
+    font-family: 'PT Serif', serif;
+}
+.jumbotron{
+    background-color: beige;
+    text-align: center;
+}
