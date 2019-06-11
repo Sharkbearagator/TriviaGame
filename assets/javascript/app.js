@@ -6,14 +6,18 @@ var wins=0
 var losses=0
 var intervalId;
 var timer = 30
-var correctAnswers = ["Ryu","Zangief","Dhalsim","Chun-Li","Dudley"]
-var falseAnswers = ["M.Bison","Vega","Balrog","Guile","Fei Long","T. Hawk","Rose","Blanka","El Fuerte","C. Viper","Hakan","E. Honda","Skullimania","Juri","R. Mika","Birdie","Urien"]
+var correctAnswers = ["Ryu","Zangief","Dhalsim","Chun-Li","Dudley","Goken","Akuma","Seth","Ken"]
+var falseAnswers = ["M.Bison","Vega","Balrog","Guile","Fei Long","T. Hawk","Rose","Blanka","El Fuerte","C. Viper","Hakan","E. Honda","Skullimania","Juri","R. Mika","Birdie","Urien","Alex","Elena","G","Sagat","Adon","Ibuki","Able","Nash","Rolento","Cammy","Decapre","F.A.N.G","Rashid"]
 var questions = {
     ask: [{ prompt: "Which fighter can fire a hadoken?",answer: correctAnswers[0],},
     {prompt: "Which fighter is known as the Red cyclone?", answer: correctAnswers[1]},
     {prompt: "Which fighter has streachy limbs due to his yoga?", answer: correctAnswers[2]},
     {prompt: "Which fighter uses the Flying Bird Kick?", answer: correctAnswers[3]},
-    {prompt: "Which fighter is a British Boxer?", answer: correctAnswers[4]}],
+    {prompt: "Which fighter is a British Boxer?", answer: correctAnswers[4]},
+    {prompt: "Which fighter is Ryu's master?", answer: correctAnswers[5]},
+    {prompt: "Which fighter has a move called the 'Raging Demon'?", answer: correctAnswers[6]},
+    {prompt: "Which fighter steals the moves of others?", answer: correctAnswers[7]},
+    {prompt: "Which fighter has a flaming Shoryuken?", answer: correctAnswers[8]}],
 }
 var chosenQuestion = [questions.ask[Math.floor(Math.random()*questions.ask.length)]]
 for(var i = 0; i < falseAnswers.length; i++){
