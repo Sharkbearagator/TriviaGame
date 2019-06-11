@@ -6,3 +6,7 @@ body{
     background-color: beige;
     text-align: center;
 }
+.btn{
+    margin: 10px;
+    text-align: center;
+}
