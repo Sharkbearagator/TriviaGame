@@ -2,6 +2,8 @@
 $(document).ready(function(){
 
 //create global variables
+var wins=0
+var losses=0
 var intervalId;
 var timer = 30
 var correctAnswers = ["Ryu","Zangief","Dhalsim","Chun-Li","Dudley"]
@@ -36,6 +38,7 @@ function decrement(){
     if(timer === 0){
         
         alert("Time's up!");
+        losses++;
         reset();
     }
 }
@@ -64,14 +67,17 @@ $("#answer-c").html("<h5>" + setMultiple[2]);
 $("#answer-d").html("<h5>" + setMultiple[3]);
 
 //create a way to select answers (buttons?)
+//alert if correct or not
 $("#button-a").click(function(){
 $("#button-a").val(setMultiple[0]);
 if(setMultiple[0]===chosenQuestion[0].answer){
 alert("Correct!");
+wins++
 reset();
 }
 else{
     alert("Incorrect!");
+    losses++
     reset();
 }
 });
@@ -80,10 +86,12 @@ $("#button-b").click(function(){
 $("#button-b").val(setMultiple[1]);
 if(setMultiple[1]===chosenQuestion[0].answer){
     alert("Correct!");
+    wins++
     reset();
     }
     else{
         alert("Incorrect!");
+        losses++
         reset();
     }
 });
@@ -92,10 +100,12 @@ $("#button-c").click(function(){
 $("#button-c").val(setMultiple[2]);
 if(setMultiple[2]===chosenQuestion[0].answer){
     alert("Correct!");
+    wins++
     reset();
     }
     else{
         alert("Incorrect!");
+        losses++
         reset();
     }
 });
@@ -104,17 +114,27 @@ $("#button-d").click(function(){
 $("#button-d").val(setMultiple[3]);
 if(setMultiple[3]===chosenQuestion[0].answer){
     alert("Correct!");
+    wins++
     reset();
     }
     else{
         alert("Incorrect!");
+        losses++
         reset();
     }
 });
 
-//alert if correct or not
+
 
 //wins and losses
+$(document).ready(function(){
+    $("#wins").html("Correct:" + " " + wins);
+    $("#losses").html("Incorrect:" + " " + losses);
+    $(document).on("click",function(){
+$("#wins").html("Correct:" + " " + wins);
+$("#losses").html("Incorrect:" + " " + losses);
+});
+});
 
 //reset clock and present new question and answers
 function reset(){
